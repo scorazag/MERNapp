@@ -1,43 +1,23 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,Button,Image} from 'react-native';
+import {Platform, StyleSheet, Text, View} from 'react-native';
+import {createStackNavigator,createAppContainer} from 'react-navigation';
+import Home from './app/components/Home';
+import Dashboard from './app/components/Dashboard';
+import AgendarCita from './app/components/AgendarCita';
+import Calendario from './app/components/Calendario';
+import Historial from './app/components/Historial';
+import Perfil from './app/components/Perfil';
 
-type Props = {};
-export default class App extends Component<Props> {
-  myfunction(){
+const AppNavigator = createStackNavigator(
+  {
+    Home: Home,
+    Dashboard:Dashboard,
+    AgendarCita:AgendarCita,
+    Calendario:Calendario,
+    Historial:Historial,
+    Perfil:Perfil
+  },
+  {initialRouteName: "Home"} 
+);
 
-  }
-  render() {
-    const Hola =  "hola mundo desde variable"
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Hola Mundo </Text>
-        <Text style={styles.instructions}>aqui andamos chidos</Text>
-        <Text style={styles.nuevo}>{Hola}</Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  nuevo:{
-    textAlign:'left',
-    color:'#FF0000',
-    fontSize:60
-  }
-});
+export default createAppContainer(AppNavigator);

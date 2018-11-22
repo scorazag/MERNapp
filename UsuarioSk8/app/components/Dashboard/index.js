@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View,Image,Text} from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Button, Icon, Left, Body, Right } from 'native-base';
+import styles from './styles';
 
 class Dashboard extends Component{
     static navigationOptions = {
@@ -14,78 +15,67 @@ class Dashboard extends Component{
 
 
     render(){
+        const img_icon = require('../../assets/sk8_icon2.png');
         return(
             <Container>
                 <Content>
                     <Card>
                         <CardItem>
                             <Left>
+                                <Thumbnail source = {img_icon} style = {styles.icon} />
                                 <Body>
                                     <Text>Agendar Cita</Text>
-                                    <Text note>Agenda tu proxima clase </Text>
+                                    <Text note>Agenda tu próxima clase </Text>
                                 </Body>
                             </Left>
-                        </CardItem>
-                        <CardItem>
-                            <Body>
-                                <Button rounded block onPress={_ => this.entrarAgendarCita()} color='#ff6600'>
-                                    <Text> Entrar</Text>
-                                </Button>
-                            </Body> 
+                            <Right>
+                                <Icon name="arrow-forward" onPress={_ => this.entrarAgendarCita()}/>
+                            </Right>
                         </CardItem>
                     </Card>
                     {/*segunda opcion*/}
                     <Card>
                         <CardItem>
                             <Left>
+                                <Icon name="calendar"/>
                                 <Body>
                                     <Text>Ver el calendario</Text>
                                     <Text note>Revisa fechas disponibles</Text>
                                 </Body>
                             </Left>
-                        </CardItem>
-                        <CardItem>
-                            <Body>
-                                <Button rounded block onPress={_ => this.entrarCalendario()} color='#ff6600'>
-                                    <Text> Entrar</Text>
-                                </Button>
-                            </Body> 
+                            <Right>
+                                <Icon name="arrow-forward" onPress={_ => this.entrarCalendario()}/>
+                            </Right>
                         </CardItem>
                     </Card>
                     {/* tercera opcion*/}
                     <Card>
                         <CardItem>
                             <Left>
+                                <Icon name="cart"/>
                                 <Body>
                                     <Text>Historial</Text>
                                     <Text note>Revisa tu Hisotiral de compras</Text>
                                 </Body>
                             </Left>
-                        </CardItem>
-                        <CardItem>
-                            <Body>
-                                <Button rounded block onPress={_ => this.entrarHistorial()} color='#ff6600'>
-                                    <Text> Entrar</Text>
-                                </Button>
-                            </Body> 
+                            <Right>
+                                <Icon name="arrow-forward" onPress={_ => this.entrarHistorial()}/>
+                            </Right>
                         </CardItem>
                     </Card>
                     {/* Cuarta opcion*/}
                     <Card>
                         <CardItem>
                             <Left>
+                                <Icon name="man"/>
                                 <Body>
                                     <Text>Perfil</Text>
-                                    <Text note>Revisa tus datos asi como las clases que te quedan</Text>
+                                    <Text note>Revisa y actualiza tus datos personales</Text>
                                 </Body>
                             </Left>
-                        </CardItem>
-                        <CardItem>
-                            <Body>
-                                <Button rounded block onPress={_ => this.entrarPerfil()} color='#ff6600'>
-                                    <Text> Entrar</Text>
-                                </Button>
-                            </Body> 
+                            <Right>
+                                <Icon name="arrow-forward" onPress={_ => this.entrarPerfil()}/>
+                            </Right>
                         </CardItem>
                     </Card>
                 </Content>

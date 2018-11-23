@@ -16,6 +16,10 @@ class Dashboard extends Component{
 
     render(){
         const img_icon = require('../../assets/sk8_icon2.png');
+        const img_1 = require('../../assets/sk8_f3.jpg');
+        const img_2 = require('../../assets/sk8_f5.jpg');
+        const img_3 = require('../../assets/Sk8Wall.jpg');
+        const img_4 = require('../../assets/sk8_f2.jpg');
         return(
             <Container>
                 <Content>
@@ -32,6 +36,9 @@ class Dashboard extends Component{
                                 <Icon name="arrow-forward" onPress={_ => this.entrarAgendarCita()}/>
                             </Right>
                         </CardItem>
+                        <CardItem cardBody>
+                            <Image source={img_1} style={styles.bannerCat}/>
+                        </CardItem>
                     </Card>
                     {/*segunda opcion*/}
                     <Card>
@@ -46,6 +53,9 @@ class Dashboard extends Component{
                             <Right>
                                 <Icon name="arrow-forward" onPress={_ => this.entrarCalendario()}/>
                             </Right>
+                        </CardItem>
+                        <CardItem cardBody>
+                            <Image source={img_2} style={styles.bannerCat}/>
                         </CardItem>
                     </Card>
                     {/* tercera opcion*/}
@@ -62,6 +72,9 @@ class Dashboard extends Component{
                                 <Icon name="arrow-forward" onPress={_ => this.entrarHistorial()}/>
                             </Right>
                         </CardItem>
+                        <CardItem cardBody>
+                            <Image source={img_3} style={styles.bannerCat}/>
+                        </CardItem>
                     </Card>
                     {/* Cuarta opcion*/}
                     <Card>
@@ -76,6 +89,9 @@ class Dashboard extends Component{
                             <Right>
                                 <Icon name="arrow-forward" onPress={_ => this.entrarPerfil()}/>
                             </Right>
+                        </CardItem>
+                        <CardItem cardBody>
+                            <Image source={img_4} style={styles.bannerCat}/>
                         </CardItem>
                     </Card>
                 </Content>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,TextInput,Alert} from 'react-native';
+import {Image,Platform, StyleSheet, Text, View,TextInput,Alert,ImageBackground} from 'react-native';
 import { Container, Header, Content, Button, StyleProvider } from 'native-base';
 import styles from './styles'
 
@@ -27,18 +27,22 @@ class Home extends Component{
       
   render(){
     const {heading, input,parent} = styles
+    const img = require('../../assets/sk8_wall_board.png');
+    const img_icon = require('../../assets/sk8_icon2.png');
 
     return(
-      <View style={{backgroundColor: '#2a0e71',flex:1,}}>
-        <View style={parent}>
-          <Text style={heading}> Bienvenidos </Text>
-          <TextInput style={input} placeholder="Correo" onChangeText={text => this.setState({correo:text})}/>
-          <TextInput style={input} secureTextEntry={true} placeholder="Password" onChangeText={text => this.setState({password:text})}/>
-            <Button rounded block onPress={_ => this.checkLogin()} color='#ff6600'>
+      <ImageBackground source={img} style={styles.fondo}>
+        <View style = {styles.parent}>
+          <Text style = {styles.heading}> Bienvenido a SK8 App</Text>
+          <Image source={img_icon} style = {styles.icon}/>
+          <TextInput style = {styles.input} placeholder="Correo" onChangeText={text => this.setState({correo:text})}/>
+          <TextInput style = {styles.input} secureTextEntry={true} placeholder="Password" onChangeText={text => this.setState({password:text})}/>
+            <Button rounded warning block onPress={_ => this.checkLogin()} style={styles.buttons}>
               <Text> Entrar</Text>
             </Button>
         </View>
-      </View>
+      </ImageBackground>
+
     )
   }
 }

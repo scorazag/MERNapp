@@ -1,16 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
-const nodemailer = require('nodemailer');
-
-const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    auth: {
-        user: 'esas23m6ammgj3dd@ethereal.email',
-        pass: 'ATaMzvHFTXuPtNU6hn'
-    }
-});
 
 const TutorSchema = mongoose.Schema({
   nombre:{type:String},

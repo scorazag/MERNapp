@@ -18,7 +18,7 @@ router.post('/register',(req,res,next) =>{
 
   Tutor.addTutor(newTutor,(err, user) => {
     if (err) {
-      res.json({succes: false, msg:'Error al registrar Usuario'});
+      res.json({succes: false, msg:'Error al registrar Tutor'});
     } else{
       res.json({succes: true, msg:'Usuario registrado'});
     }

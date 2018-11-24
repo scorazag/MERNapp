@@ -1,29 +1,45 @@
 import React, {Component} from 'react';
-import {View,Text} from 'react-native';
-import { Container, Header, Content, Form, Item, Input, Label,Picker } from 'native-base';
-
+import {View,Text,Image,ImageBackground,TouchableOpacity,SearchBar,someMethod,CustomComponent} from 'react-native';
+import { Container, Header, Content,Body,Card, CardItem, Thumbnail, Form, Item, Input, Label,Picker,Button,Icon,Left,Right } from 'native-base';
+import styles from './styles'
 class Paquetes extends Component{
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      state: 'Java'
+    }
+  }
   render(){
     return(
-      <Container>
-        <Content>
+      < ImageBackground   style={styles.container}
+      source={require('../../image/fonloem.jpg')} >
+        <Content style={styles.overlayContainer}>
+        <Image
+        style={styles.emlogo}
+          source={require('../../image/logo1.png')}
+        />
+          <Text style={styles.titulo}>Contrato de Paquete</Text>
+         
           <Form>
-            <Item stackedLabel>
-            <Label>Correo</Label>
-            <Input />
-            </Item>
-            <Label># de clases</Label>
-            <Picker mode="dropdown"    style={{ width: undefined }}
-             placeholder="# de clases" placeholderStyle={{ color: "#bfc6ea" }}  placeholderIconColor="#007aff"
-            >
-
-            <Picker.Item label="4" value="key0" />
-            <Picker.Item label="8" value="key1SS" />
+            <Label style={styles.lab}>Correo</Label>
+            <Input style={styles.texiput} placeholder="Correo" placeholderTextColor="#FFFFFF"/>
+           
+            <Label style={styles.lab}>Selecione el # de clases</Label>
+            <Picker mode="dropdown"   style={styles.pic}
+             placeholder="# de clases" placeholderStyle={{ color: "#FFFFFF" }}  placeholderIconColor="#FFFFFF"
+             selectedValue={this.state.language}
+             onValueChange={(lang) => this.setState({language: lang})}>
+            
+             <Picker.Item label="4 Clases" value="key0" />
+            <Picker.Item label="8 Clases" value="key1SS" />
             </Picker>
+
+             <Button style={styles.bulog} block onPress={_ => this.checkLogin()}>
+            <Text style={styles.resusu}> Registrar Pago</Text>
+          </Button>
           </Form>
         </Content>
-      </Container>
+      </ ImageBackground>
     )
   }
 }

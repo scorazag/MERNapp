@@ -10,6 +10,7 @@ const UserSchema = mongoose.Schema({
   password:{type:String},
   nombreTutor:{type:String},
   telefonoTutor:{type:Number},
+  paquete:{type:Number},
   historial:{
     type:[
       'Mixed'

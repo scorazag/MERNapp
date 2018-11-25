@@ -1,26 +1,44 @@
 import React, {Component} from 'react';
-import {Image,Platform, StyleSheet, Text, View,TextInput,Alert,ImageBackground} from 'react-native';
+import {Image,Platform, StyleSheet, Text, View,TextInput,Alert,ImageBackground,AsyncStorage} from 'react-native';
 import { Container, Header, Content, Button, StyleProvider } from 'native-base';
 import styles from './styles'
 
 
 class Home extends Component{
 
-  state = {correo:"", password:""}
+  state = {email:"", password:""}
 
   static navigationOptions = {
     header:null
   }
 
   checkLogin(){
-    const{correo,password} = this.state
-    if(correo == 'admin' && password == 'admin'){
-      this.props.navigation.navigate('Dashboard');
-    }
-    else{
-      Alert.alert('Error','clave incorrecta',[{
+    const{email,password} = this.state
+    if(email == '' && password == ''){
+      Alert.alert('Error','Faltan campos',[{
         text:'OK'
       }])
+    }
+    else{
+      fetch('http://192.168.1.73:3000/users/authenticate',{
+        method:'POST',
+        headers:{
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body:JSON.stringify({
+          email:email,
+          password:password
+        })
+      })
+      .then((response) => response.json())
+      .then((res) =>{
+        if (res.success === true) {
+          //alert(res.user.email)
+          AsyncStorage.setItem('usuario',res.user);
+          this.props.navigation.navigate('Dashboard');
+        }
+      })
     }
     
   }
@@ -35,7 +53,7 @@ class Home extends Component{
         <View style = {styles.parent}>
           <Text style = {styles.heading}> Bienvenido a SK8 App</Text>
           <Image source={img_icon} style = {styles.icon}/>
-          <TextInput style = {styles.input} placeholder="Correo" onChangeText={text => this.setState({correo:text})}/>
+          <TextInput style = {styles.input} placeholder="Correo" onChangeText={text => this.setState({email:text})}/>
           <TextInput style = {styles.input} secureTextEntry={true} placeholder="Password" onChangeText={text => this.setState({password:text})}/>
             <Button rounded warning block onPress={_ => this.checkLogin()} style={styles.buttons}>
               <Text> Entrar</Text>

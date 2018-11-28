@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View,Image,Text} from 'react-native';
+import {View,Image,Text,AsyncStorage} from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Button, Icon, Left, Body, Right } from 'native-base';
 import styles from './styles';
 

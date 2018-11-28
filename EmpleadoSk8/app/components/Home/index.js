@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,TextInput,Alert,Image,ImageBackground,TouchableOpacity} from 'react-native';
 import { Container, Header, Content, Button, StyleProvider } from 'native-base';
-import styles from './styles'
+import styles from './styles';
 
 class Home extends Component{
 

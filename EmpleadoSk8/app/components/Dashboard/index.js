@@ -47,8 +47,8 @@ class Dashboard extends Component{
                             <Left>
                             <Icon name="man" />
                             <Body>
-                                    <Text>Tutor</Text>
-                                    <Text note>Dar de alta a un tutor</Text>
+                                    <Text>Instructor</Text>
+                                    <Text note>Dar de alta a un Instructor</Text>
                            </Body>
                             </Left>
                             <Right>
@@ -85,7 +85,7 @@ class Dashboard extends Component{
                             <Left>
                             <Icon name="book" />
                             <Body>
-                                    <Text>Paqueta</Text>
+                                    <Text>Paquete</Text>
                                     <Text note>Alta de un paquete a usuario registrado</Text>
                              </Body>
                             </Left>

@@ -15,7 +15,18 @@ export default StyleSheet.create({
     backgroundColor:'rgba(0, 0, 0, 0.4)',
     width : 410,
   },
-  
+  emlogo:{
+    marginTop: 20,
+    marginRight:10,
+    width: 150, height: 60,
+   
+  },
+  titulo:{
+    color : '#FFFFFF',
+    textAlign: 'center',
+    marginVertical: 10,
+    fontSize: 25
+  },
   lab:{
     margin :5,
     fontSize: 18,
@@ -36,19 +47,6 @@ export default StyleSheet.create({
   parent:{
     flex:1,
     justifyContent:'center'
-  },
-  
-  titulo:{
-    color : '#FFFFFF',
-    textAlign: 'center',
-    marginVertical: 10,
-    fontSize: 25
-  },
-  emlogo:{
-    marginTop: 20,
-    marginRight:10,
-    width: 150, height: 60,
-   
   },
   
   bulog:{

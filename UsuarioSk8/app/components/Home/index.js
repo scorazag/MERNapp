@@ -20,7 +20,7 @@ class Home extends Component{
       }])
     }
     else{
-      fetch('http://192.168.1.73:3000/users/authenticate',{
+      fetch('http://172.16.2.149:3000/users/authenticate',{
         method:'POST',
         headers:{
           Accept: 'application/json',
@@ -35,7 +35,8 @@ class Home extends Component{
       .then((res) =>{
         if (res.success === true) {
           //alert(res.user.email)
-          AsyncStorage.setItem('usuario',res.user);
+          AsyncStorage.setItem('usuario',JSON.stringify(res));
+          alert(JSON.stringify(res))
           this.props.navigation.navigate('Dashboard');
         }
       })

@@ -9,7 +9,8 @@ export default class AgendarCita extends Component {
       list:''
     }
     try{
-      const value = await AsyncStorage.getItem('usuario');
+      const value = AsyncStorage.getItem('usuario');
+      alert(value);
       
     }catch(err){
       console.log(err)

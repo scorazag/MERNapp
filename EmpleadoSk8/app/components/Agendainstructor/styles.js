@@ -12,21 +12,10 @@ export default StyleSheet.create({
   } ,
   overlayContainer:{
     flex :1,
-    backgroundColor:'rgba(0, 0, 0, 0.5)',
-    width : 400
+    backgroundColor:'rgba(0, 0, 0, 0.4)',
+    width : 410,
   },
-  emlogo:{
-    marginTop: 20,
-    marginRight:10,
-    width: 150, height: 60,
-   
-  },
-  titulo:{
-    color : '#FFFFFF',
-    textAlign: 'center',
-    marginVertical: 10,
-    fontSize: 25
-  },
+  
   lab:{
     margin :5,
     fontSize: 18,
@@ -39,23 +28,41 @@ export default StyleSheet.create({
     backgroundColor:'rgba(229, 145, 11, 0.7)',
     borderRadius: 10,
     paddingHorizontal: 16,
-    color : '#FFFFFF',
+    color : '#0D47A1',
     fontSize:15,
     alignSelf: 'center'
   },
-  pic:{
-    width :350,
-    marginLeft:20,
-    marginRight:20,
-    backgroundColor:'rgba(229, 145, 11, 0.7)',
-    paddingHorizontal: 16,
-    color : '#FFFFFF',
-    alignSelf: 'center',
-  },
+  
   parent:{
     flex:1,
     justifyContent:'center'
   },
+  
+  titulo:{
+    color : '#FFFFFF',
+    textAlign: 'center',
+    marginVertical: 10,
+    fontSize: 25
+  },
+  emlogo:{
+    marginTop: 20,
+    marginRight:10,
+    width: 150, height: 60,
+   
+  },
+  datePicker: {
+    height: 60,
+    width: 350,
+    marginTop: 20,
+    paddingHorizontal: 10,
+
+
+},
+picker: {
+    width: 300,
+    marginTop: 20,
+},
+  
   bulog:{
     marginTop :25,
     backgroundColor: '#003366',

@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import {View,Text,Image,ImageBackground,TouchableOpacity,SearchBar,someMethod,CustomComponent} from 'react-native';
 import { Container, Header, Content,Body,Card, CardItem, Thumbnail, Form, Item, Input, Label,Picker,Button,Icon,Left,Right } from 'native-base';
-import styles from './styles'
+import styles from './styles.js';
 class Paquetes extends Component{
+ 
   constructor(props) {
     super(props);
     this.state = {
-      state: 'Java'
+      state: 'paquete'
     }
   }
   render(){
@@ -30,14 +31,15 @@ class Paquetes extends Component{
              selectedValue={this.state.language}
              onValueChange={(lang) => this.setState({language: lang})}>
             
-             <Picker.Item label="4 Clases" value="key0" />
-            <Picker.Item label="8 Clases" value="key1SS" />
+             <Picker.Item label="Paquete de 4 Clases" value="key0" />
+            <Picker.Item label="Paquete de 8 Clases" value="key1SS" />
             </Picker>
 
              <Button style={styles.bulog} block onPress={_ => this.checkLogin()}>
             <Text style={styles.resusu}> Registrar Pago</Text>
           </Button>
           </Form>
+
         </Content>
       </ ImageBackground>
     )

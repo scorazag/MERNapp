@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View,Text,Image,ImageBackground} from 'react-native';
 import { Container, Header, Content, Form, Item, Input, Label,Button } from 'native-base';
-import styles from './styles'
+import styles from './styles.js';
 class Usuario extends Component{
   render(){
     return(
@@ -16,19 +16,26 @@ class Usuario extends Component{
           <Form>
            
               <Label style={styles.lab}>Nombre</Label>
-              <Input style={styles.texiput} secureTextEntry={true} placeholder="nombre" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({nombre:text})}/>
+              <Input style={styles.texiput} secureTextEntry={true} placeholder="nombre" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Unombre:text})}/>
            
 
              
               <Label style={styles.lab} >Edad</Label>
-              <Input style={styles.texiput} secureTextEntry={true} placeholder="Edad" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({edad:text})} />
+              <Input style={styles.texiput} secureTextEntry={true} placeholder="Edad" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Uedad:text})} />
+
+              <Label style={styles.lab} >Telefono</Label>
+              <Input style={styles.texiput} secureTextEntry={true} placeholder="Telefono" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Utel:text})} />
            
+              <Text style={styles.titulo}>Datos del Tutor</Text>
+
+              <Label style={styles.lab} >Nombre Tutor</Label>
+              <Input style={styles.texiput} secureTextEntry={true} placeholder="Nombre Tutor" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Tnombre:text})} />
             
               <Label style={styles.lab} >Correo</Label>
-              <Input style={styles.texiput} secureTextEntry={true} placeholder="correo" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({correo:text})} />
+              <Input style={styles.texiput} secureTextEntry={true} placeholder="correo" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Tcorreo:text})} />
            
-              <Label style={styles.lab}>Telefono</Label>
-              <Input style={styles.texiput} secureTextEntry={true} placeholder="Telefono" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({tel:text})}/>
+              <Label style={styles.lab}>Telefono Tutor</Label>
+              <Input style={styles.texiput} secureTextEntry={true} placeholder="Telefono" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Ttel:text})}/>
           
 
            <Button style={styles.bulog} block onPress={_ => this.checkLogin()}>

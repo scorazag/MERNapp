@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View,Text,Image,ImageBackground} from 'react-native';
 import { Container, Header, Content, Form, Item, Input, Label,Button } from 'native-base';
-import styles from './styles'
+import styles from './styles.js';
 class Instructor extends Component{
   render(){
     return(
@@ -12,7 +12,7 @@ class Instructor extends Component{
         style={styles.emlogo}
           source={require('../../image/logo1.png')}
         />
-          <Text style={styles.titulo}>Registro de Tutor</Text>
+          <Text style={styles.titulo}>Registro de Instructor</Text>
           <Form>
            
               <Label style={styles.lab}>Nombre</Label>
@@ -32,7 +32,7 @@ class Instructor extends Component{
            
 
            <Button style={styles.bulog} block onPress={_ => this.checkLogin()}>
-            <Text style={styles.resusu}> Registrar Tutor</Text>
+            <Text style={styles.resusu}> Registrar Instructor</Text>
           </Button>
           </Form>
         </Content>

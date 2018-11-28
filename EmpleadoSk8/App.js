@@ -7,6 +7,9 @@ import Instructor from './app/components/Instructor';
 import Paquetes from './app/components/Paquetes';
 import Calendario from './app/components/Calendario';
 import Clientes from './app/components/Clientes';
+import Infocliente from './app/components/Infocliente';
+import Agendainstructor from './app/components/Agendainstructor';
+
 
 
 export default createStackNavigator({
@@ -17,4 +20,8 @@ export default createStackNavigator({
   paquetes:Paquetes,
   calendario:Calendario,
   clientes:Clientes,
+  infocliente:Infocliente,
+  agendainstructor:Agendainstructor,
+  
+  
 })

@@ -49,17 +49,13 @@ class Instructor extends Component{
 
   render(){
     return(
-      < ImageBackground   style={styles.container}
-      source={require('../../image/cliente.jpg')} >
-        <Content style={styles.overlayContainer}>
-        <Image
-        style={styles.emlogo}
-          source={require('../../image/logo1.png')}
-        />
-          <Text style={styles.titulo}>Registro de Instructor</Text>
-          <Form>
-           
-              <Label style={styles.lab}>Nombre</Label>
+      
+      < ImageBackground   style={styles.container} source={require('../../image/cliente.jpg')} >
+      <Content  style={styles.overlayContainer}>
+        <Image style={styles.emlogo} source={require('../../image/logo1.png')}/>
+        <Text style={styles.titulo}>Registro de Instructor</Text>
+        <Form>
+        <Label style={styles.lab}>Nombre</Label>
               <Input style={styles.texiput} secureTextEntry={true} placeholder="nombre" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({nombre:text})}/>
            
 
@@ -75,42 +71,15 @@ class Instructor extends Component{
               <Input style={styles.texiput} secureTextEntry={true} placeholder="Telefono" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({tel:text})}/>
            
 
-           <Button style={styles.bulog} block onPress={_ => this.checkLogin()}>
+           <Button style={styles.bulog} block onPress={_ => this.registarTutor()}>
             <Text style={styles.resusu}> Registrar Instructor</Text>
           </Button>
 
-      <Container>
-        <Header />
-        <Content>
-          <Form>
-            <Item stackedLabel>
-              <Label>Nombre</Label>
-              <Input  onChangeText={text => this.setState({nombre:text})} />
-            </Item>
-
-            <Item stackedLabel last>
-              <Label>Edad</Label>
-              <Input  />
-            </Item>
-            <Item stackedLabel last>
-              <Label>Correo</Label>
-              <Input  onChangeText={text => this.setState({email:text})}/>
-            </Item>
-            <Item stackedLabel last>
-              <Label>Telefono</Label>
-              <Input  onChangeText={text => this.setState({celular:text})}/>
-            </Item>
-          </Form>
-          <Button rounded block  onPress={_ => this.registarTutor()}   color='#ff6600'>
-              <Text> Entrar</Text>
-            </Button>
-        </Content>
-      </Container>
-
+        </Form>
+      </Content>
+      </ImageBackground>     
     )
   }
 }
 
 export default Instructor
-
-//onPress={_ => this.registarTutor()}

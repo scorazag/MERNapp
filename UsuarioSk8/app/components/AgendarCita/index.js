@@ -70,9 +70,7 @@ export default class AgendarCita extends Component {
           is24Hour = {true}
         />
 
-        <Button rounded warning block onPress={_ => this.tomarClase()} style={styles.buttons}>
-          <Text> Guardar</Text>
-        </Button>
+        <Button rounded warning block onPress={_ => this.tomarClase()} style={styles.buttons} title='Guardar'/>
       </View>
     );
   }

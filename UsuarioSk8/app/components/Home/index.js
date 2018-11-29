@@ -35,8 +35,7 @@ class Home extends Component{
       .then((res) =>{
         if (res.success === true) {
           
-          AsyncStorage.setItem('usuario',JSON.stringify(res));
-          alert(JSON.stringify(res))
+          AsyncStorage.setItem('usuario',JSON.stringify(res.user));
           this.props.navigation.navigate('Dashboard');
         }
       })

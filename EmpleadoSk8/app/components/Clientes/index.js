@@ -4,6 +4,15 @@ import { Container, Header, Content,Body,Card,CardItem,Left,Right,Thumbnail,Icon
 import styles from './styles.js';
 class Clientes extends Component{
 
+  constructor(){
+    super()
+    fetch('http://localhost:3000/users/getTodosUsuarios')
+    .then((response) => response.json())
+    .then((responseJson) => {
+      alert(JSON.stringify(responseJson))
+    })
+  }
+
     entrarInfocliente(){  this.props.navigation.navigate('infocliente');}
     
   render(){

@@ -6,7 +6,7 @@ import styles from './styles';
 class Dashboard extends Component{
     constructor(){
         super()
-        alert( AsyncStorage.getItem('usuario'))
+
     }
     static navigationOptions = {
         header:null

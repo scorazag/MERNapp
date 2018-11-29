@@ -6,11 +6,15 @@ export default class AgendarCita extends Component {
   constructor(){
     super()
     this.state = {
-      list:''
+      nombre:'',
+      correo: '',
+      edad:'',
+      celular:'',
     } 
     AsyncStorage.getItem('usuario').then((value) =>{
       if (value !== null) {
-        alert(JSON.stringify(value));
+        myobj = JSON.parse(value);
+        this.setState({nombre:myobj.nombre});
     }
 
     });
@@ -28,7 +32,7 @@ export default class AgendarCita extends Component {
           <Image style={styles.avatar} source={img_icon}/>
           <View style={styles.body}>
             <View style={styles.bodyContent}>
-              <Text style={styles.name}>{Usuario}</Text>
+              <Text style={styles.name}>{this.state.nombre}</Text>
               <Text style={styles.info}>Tipo de usuario</Text>
               <Text style={styles.description}>Información del usuario</Text>
               

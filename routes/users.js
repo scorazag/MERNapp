@@ -104,10 +104,15 @@ router.post('/updatePaquete',(req,res,next) =>{
   });
 });
 
-//ruta para ver historial 
+//ruta para ver historial
 router.get('/getHistorial',(req,res,next) =>{
   res.send("aqui recupera el historial de clases");
 })
 
+router.get('/getTodosUsuarios',(req,res,next) => {
+  User.find({}, function (err,users) {
+    res.send(users)
+  })
+})
 
 module.exports = router;

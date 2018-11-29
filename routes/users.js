@@ -11,8 +11,8 @@ const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
     auth: {
-        user: 'esas23m6ammgj3dd@ethereal.email',
-        pass: 'ATaMzvHFTXuPtNU6hn'
+        user: 'dm7ml6fp7wk3snrm@ethereal.email',
+        pass: 'apS5bxdPwHYdutCCaB'
     }
 });
 
@@ -35,11 +35,11 @@ router.post('/register',(req,res,next) =>{
     } else{
       res.json({succes: true, msg:'Usuario registrado'});
       //aqui manda el email de bienvenida
-      /*const mailOptions = {
+      const mailOptions = {
         from: 'esas23m6ammgj3dd@ethereal.email', // sender address
         to: newUser.email, // list of receivers
         subject: 'Bienvenido a Sk8topia' , // Subject line
-        html: '<p> Hola  te Damos la bienvenida a Dino Delivery</p>'
+        html: '<p> Hola  te Damos la bienvenida a Sk8topia</p>'
       };
       console.log("Aqui se ejecutando el sendmail");
       transporter.sendMail(mailOptions, function (err,info){
@@ -47,7 +47,7 @@ router.post('/register',(req,res,next) =>{
           console.log(err)
         else
           console.log(info);
-      });*/
+      });
     }
   });
 });
@@ -105,11 +105,53 @@ router.post('/updatePaquete',(req,res,next) =>{
   User.update({email:email},{$set:{paquete:paquete}},{ multi: false, upsert: false}).then(function (paquete) {
     res.json({succes:true,msg:"Paquete actualizo"});
   });
+  //aqui manda el email de bienvenida
+  const mailOptions = {
+    from: 'esas23m6ammgj3dd@ethereal.email', // sender address
+    to: email, // list of receivers
+    subject: 'Bienvenido a Sk8topia' , // Subject line
+    html: '<p> paquete actualizado</p>'
+  };
+  console.log("Aqui se ejecutando el sendmail");
+  transporter.sendMail(mailOptions, function (err,info){
+    if(err)
+      console.log(err)
+    else
+      console.log(info);
+  });
 });
 
 //ruta para ver historial
 router.get('/getHistorial',(req,res,next) =>{
   res.send("aqui recupera el historial de clases");
+})
+
+router.post('/updateHisto',(req,res,next) =>{
+  const emailt=req.body.email;
+
+  const historial = {
+    hora:req.body.hora,
+    fecha: req.body.fecha
+  }
+  User.update({email:emailt},{$push:{"historial":historial}}).then(function (historial) {
+    res.json(historial);
+  });
+  console.log("imprimeo lo que viene del req");
+  console.log(historial);
+  console.log("Aqui vemos lo que se manda en el mail");
+  const mailOptions = {
+    from: 'esas23m6ammgj3dd@ethereal.email', // sender address
+    to: emailt, // list of receivers
+    subject: 'Bienvenido a Sk8topia' , // Subject line
+    html: '<p> paquete actualizado</p>'
+  };
+  console.log("Aqui se ejecutando el sendmail");
+  transporter.sendMail(mailOptions, function (err,info){
+    if(err)
+      console.log(err)
+    else
+      console.log(info);
+  });
 })
 
 router.get('/getTodosUsuarios',(req,res,next) => {

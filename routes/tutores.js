@@ -13,8 +13,8 @@ const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
     auth: {
-        user: 'esas23m6ammgj3dd@ethereal.email',
-        pass: 'ATaMzvHFTXuPtNU6hn'
+        user: 'dm7ml6fp7wk3snrm@ethereal.email',
+        pass: 'apS5bxdPwHYdutCCaB'
     }
 });
 
@@ -31,6 +31,20 @@ router.post('/register',(req,res,next) =>{
       res.json({succes: false, msg:'Error al registrar Tutor'});
     } else{
       res.json({succes: true, msg:'Usuario registrado'});
+
+      const mailOptions = {
+        from: 'esas23m6ammgj3dd@ethereal.email', // sender address
+        to: newTutor.email, // list of receivers
+        subject: 'Bienvenido a Sk8topia' , // Subject line
+        html: '<p> Hola  te Damos la bienvenida al equpi de Sk8topia confiamos en que seras un exelente instrucctor</p>'
+      };
+      console.log("Aqui se ejecutando el sendmail");
+      transporter.sendMail(mailOptions, function (err,info){
+        if(err)
+          console.log(err)
+        else
+          console.log(info);
+      });
     }
   });
 });

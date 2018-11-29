@@ -13,13 +13,13 @@ class Clientes extends Component{
 
   componentDidMount(){
     const data = []
-    return fetch('http://192.168.0.11:3000/users/getTodosUsuarios')
+    return fetch('http://172.16.12.74:3000/users/getTodosUsuarios')
       .then((response) => response.json())
       .then((responseJson) => {
         obj = JSON.stringify(responseJson)
         obj1 = JSON.parse(obj)
         alert(obj1)
-  
+
       })
       .catch((error) =>{
         alert(error);
@@ -27,7 +27,7 @@ class Clientes extends Component{
   }
 
   entrarInfocliente(){  this.props.navigation.navigate('infocliente');}
-    
+
   render(){
     return(
       <ImageBackground   style={styles.container}
@@ -41,7 +41,7 @@ class Clientes extends Component{
 
            {/*Buscador*/}
           <Card style={styles.card}>
-            <CardItem style={styles.card}>       
+            <CardItem style={styles.card}>
               <Body>
                 {/*Buscador del cliente*/}
                 <TextInput style={styles.texiput} placeholder="Buscar Cliente" onChangeText={text => this.setState({buscar:text})}/>
@@ -49,7 +49,7 @@ class Clientes extends Component{
               <Right>
                 <Icon name="search" style = {styles.sear} />
               </Right>
-           </CardItem>             
+           </CardItem>
         </Card>
          {/*Clientes*/}
           <Card>
@@ -71,17 +71,17 @@ class Clientes extends Component{
                                 <Text style={{color:'#FFFFFF',padding: 8}}>Ver Informacion</Text>
                                 </Button>
                             </Form>
-                             
+
                           </Right>
                         </CardItem>
                         <CardItem>
                         <Text>Cliente : Pantro Sael Radcela Coraza Johan</Text>
                        </CardItem>
         </Card>
-       
+
         </Content>
         </ ImageBackground>
-                
+
     )
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, View, StyleSheet, Button } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
 
@@ -12,7 +12,22 @@ export default class AgendarCita extends Component {
       hora: ''
     }
   }
-  
+
+  tomarClase(){
+    const{fecha,hora} = this.state;
+    fetch('http://172.16.12.74:3000/users/updateHisto',{
+      method:'POST',
+      headers:{
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body:JSON.stringify({
+        hora:hora,
+        fecha:fecha
+      }),
+    })
+  }
+
 
   handlePicker = (datetime) => {
     this.setState({
@@ -24,15 +39,15 @@ export default class AgendarCita extends Component {
 
   hidePicker = () => {
     this.setState({
-       isVisible: false 
+       isVisible: false
       });
   }
 
   showPicker = () =>{
     this.setState({
-      isVisible: true 
+      isVisible: true
      });
-  } 
+  }
 
   render () {
     return (
@@ -54,6 +69,10 @@ export default class AgendarCita extends Component {
           datePickerModeAndroid = {'spinner'}
           is24Hour = {true}
         />
+
+        <Button rounded warning block onPress={_ => this.tomarClase()} style={styles.buttons}>
+          <Text> Guardar</Text>
+        </Button>
       </View>
     );
   }
@@ -74,6 +93,12 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     justifyContent: 'center',
     marginTop: 15
+  },
+  buttons: {
+    margin: 15,
+    width: 150,
+    height: 35,
+    alignSelf: 'center'
   },
   text: {
     color: 'white',

@@ -20,7 +20,7 @@ class Home extends Component{
       }])
     }
     else{
-      fetch('http://192.168.0.11:3000/users/authenticate',{
+      fetch('http://172.16.12.74:3000/users/authenticate',{
         method:'POST',
         headers:{
           Accept: 'application/json',
@@ -34,7 +34,7 @@ class Home extends Component{
       .then((response) => response.json())
       .then((res) =>{
         if (res.success === true) {
-          
+
           AsyncStorage.setItem('usuario',JSON.stringify(res.user));
           this.props.navigation.navigate('Dashboard');
         }

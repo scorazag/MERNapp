@@ -24,7 +24,7 @@ class Instructor extends Component{
     const {edad} = this.state
 
       alert("entrando al else")
-      fetch('http://172.16.12.74:3000/tutores/register',{
+      fetch('http://192.168.43.84:3000/tutores/register',{
         method:'POST',
         headers:{
           Accept: 'application/json',

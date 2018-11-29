@@ -15,7 +15,7 @@ class Paquetes extends Component{
     const{email} = this.state
     const{paquete} = this.state
 
-      fetch('http://172.16.12.74:3000/users/updatePaquete',{
+      fetch('http://192.168.43.84:3000/users/updatePaquete',{
         method:'POST',
         headers:{
           Accept: 'application/json',

@@ -13,7 +13,7 @@ class Clientes extends Component{
 
   componentDidMount(){
     const data = []
-    return fetch('http://172.16.12.74:3000/users/getTodosUsuarios')
+    return fetch('http://192.168.43.84:3000/users/getTodosUsuarios')
       .then((response) => response.json())
       .then((responseJson) => {
         obj = JSON.stringify(responseJson)

@@ -20,7 +20,7 @@ class Home extends Component{
       }])
     }
     else{
-      fetch('http://172.16.12.74:3000/users/authenticate',{
+      fetch('http://192.168.43.84:3000/users/authenticate',{
         method:'POST',
         headers:{
           Accept: 'application/json',

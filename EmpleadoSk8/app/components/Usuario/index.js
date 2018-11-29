@@ -30,7 +30,7 @@ class Usuario extends Component{
     if(nombre == '' || email == '' || celular == '' || edad == ''){
        alert("Faltan campos ");
     }else{
-      fetch('http://172.16.12.74:3000/users/register',{
+      fetch('http://192.168.43.84:3000/users/register',{
         method:'POST',
         headers:{
           Accept: 'application/json',

@@ -39,6 +39,11 @@ export default StyleSheet.create({
     color: "#00BFFF",
     marginTop:10
   },
+  tutor:{
+    fontSize:16,
+    color: "#FF5233",
+    marginTop:10
+  },
   description:{
     fontSize:16,
     color: "#696969",

@@ -10,22 +10,27 @@ export default class AgendarCita extends Component {
       correo: '',
       edad:'',
       celular:'',
+      nombreTutor:'',
+      telefonoTutor:''
     } 
     AsyncStorage.getItem('usuario').then((value) =>{
       if (value !== null) {
         myobj = JSON.parse(value);
         this.setState({nombre:myobj.nombre});
+        this.setState({correo:myobj.email});
+        this.setState({edad:myobj.edad});
+        this.setState({celular:myobj.celular});
+        this.setState({nombreTutor:myobj.nombreTutor});
+        this.setState({telefonoTutor:myobj.telefonoTutor});
     }
 
     });
       
   }
   render() {
-    const img_icon = require('../../assets/sk8_icon2.png');
+    const img_icon = require('../../assets/sael.jpg');
     const header = require('../../assets/sk8_f4.jpg');
-    var Usuario = 'Uskudar';
-    //const data = JSON.stringify(this.state.list);
-
+    
     return (
       <View style={styles.container} on>
           <Image source={header} style={styles.header}/>
@@ -33,15 +38,11 @@ export default class AgendarCita extends Component {
           <View style={styles.body}>
             <View style={styles.bodyContent}>
               <Text style={styles.name}>{this.state.nombre}</Text>
-              <Text style={styles.info}>Tipo de usuario</Text>
-              <Text style={styles.description}>Información del usuario</Text>
-              
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Actualizar Información</Text>  
-              </TouchableOpacity>              
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Cambiar Imagen</Text> 
-              </TouchableOpacity>
+              <Text style={styles.info}>{this.state.correo}</Text>
+              <Text style={styles.description}>{this.state.edad}</Text>
+              <Text style={styles.description}>{this.state.celular}</Text>
+              <Text style={styles.tutor}>{this.state.nombreTutor}</Text>
+              <Text style={styles.description}>{this.state.telefonoTutor}</Text>
             </View>
         </View>
       </View>

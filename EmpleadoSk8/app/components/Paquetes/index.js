@@ -23,7 +23,9 @@ class Paquetes extends Component{
          
           <Form>
             <Label style={styles.lab}>Correo</Label>
-            <Input style={styles.texiput} placeholder="Correo" placeholderTextColor="#FFFFFF"/>
+
+            <Input style={styles.texiput} placeholder="Correo" keyboardType='email-address' placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Unombre:text})}/>
+
            
             <Label style={styles.lab}>Selecione el # de clases</Label>
             <Picker mode="dropdown"   style={styles.pic}
@@ -31,8 +33,11 @@ class Paquetes extends Component{
              selectedValue={this.state.language}
              onValueChange={(lang) => this.setState({language: lang})}>
             
-             <Picker.Item label="Paquete de 4 Clases" value="key0" />
-            <Picker.Item label="Paquete de 8 Clases" value="key1SS" />
+
+             <Picker.Item label="Paquete de 4 Clases" value="4" />
+            <Picker.Item label="Paquete de 8 Clases" value="8" />
+
+            
             </Picker>
 
              <Button style={styles.bulog} block onPress={_ => this.checkLogin()}>

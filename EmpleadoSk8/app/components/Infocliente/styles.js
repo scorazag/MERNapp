@@ -5,13 +5,9 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    width: null, height: null,
+ 
   },
-  overlayContainer:{
-    flex :1,
-    
-    width : 410,
-  },
+
   titulo:{
     color : '#000000',
     textAlign: 'center',
@@ -19,6 +15,7 @@ export default StyleSheet.create({
     fontSize: 25
   },
   card:{
+    width:340,
     backgroundColor :'rgba(229, 145, 11, 0.7)'
 },
   avatar: {
@@ -63,16 +60,18 @@ export default StyleSheet.create({
     borderRadius:30,
     backgroundColor: "#00BFFF",
   },
-  buttonContainer2: {
-    marginTop:10,
-    height:45,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom:20,
-    width:150,
-    borderRadius:30,
-    backgroundColor: "red",
+
+  bulog:{
+    marginTop :25,
+    backgroundColor: 'red',
+    width:350
+  },
+  resusu:{
+    fontSize :20,
+    color:'#FFFFFF',
+    alignSelf:'center',
+    alignItems:'center',
+    marginLeft:130
   },
 
     emlogo:{

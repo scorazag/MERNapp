@@ -18,7 +18,9 @@ class Infocliente extends Component{
     var Usuario = 'Uskudar';
     return(
      <Container style={styles.container}>
-        <Content style={styles.overlayContainer}>
+
+        <Content >
+
         <Image
       style={styles.emlogo}
         source={require('../../image/logo1.png')}
@@ -137,33 +139,7 @@ class Infocliente extends Component{
                      </Body>
                      </CardItem>
       </Card>      
-      <Card>
-                      <CardItem>
-                         
-                      <Left>
-                          <Form>
-                            <TextInput  editable={false} selectTextOnFocus={false}  />
-                              <Button style={styles.buttonContainer} onPress={_ => this.entrarClieninfo()} >
-                                <Text>Actualizar</Text>
-                                </Button>
-                            </Form>
-                          </Left>
-                          <Body>
-                         
-                          <Right>
-                          <Form>
-                            <TextInput  editable={false} selectTextOnFocus={false}  />
-                              <Button  style={styles.buttonContainer2} onPress={_ => this.entrarClieninfo()} >
-                                <Text>Eliminar</Text>
-                                </Button>
-                            </Form>   
-                          </Right>       
-                           </Body>
-                          
-                      </CardItem>
-                      
-      </Card>   
-                         
+             
                            
                            
                           

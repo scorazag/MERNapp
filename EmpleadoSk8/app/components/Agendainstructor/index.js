@@ -28,6 +28,9 @@ class Agendainstructor extends Component{
           <Form>
            
               <Label style={styles.lab}>Nombre de Instructor</Label>
+              <Input style={styles.texiput} secureTextEntry={false} placeholder="Nombre de Instructor" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Inombre:text})}/>
+              <Label style={styles.lab} >Hora</Label>
+
               <Input style={styles.texiput} secureTextEntry={true} placeholder="Nombre de Instructor" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Inombre:text})}/>
 
               <Label style={styles.lab} >Hora</Label>
@@ -83,13 +86,16 @@ class Agendainstructor extends Component{
                                     marginLeft: 86,
                                     backgroundColor: 'rgba(229, 145, 11, 0.7)',
                                     borderRadius: 10,
+                                    color:'#FFFFFF'
+
                                 }
                             }}
                             onDateChange={(date) => { this.setState({ dateEvent: date, date: date }) }}
                         />
+
               <Label style={styles.lab} >Fecha</Label>
               <Input style={styles.texiput} secureTextEntry={true} placeholder="Fecha" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({fecha:text})} />
-           
+    
            <Button style={styles.bulog} block onPress={_ => this.checkLogin()}>
             <Text style={styles.resusu}> Agendar Instructor</Text>
           </Button>

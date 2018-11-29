@@ -20,7 +20,7 @@ class Home extends Component{
       }])
     }
     else{
-      fetch('http://172.16.0.111:3000/users/authenticate',{
+      fetch('http://192.168.0.11:3000/users/authenticate',{
         method:'POST',
         headers:{
           Accept: 'application/json',
@@ -34,8 +34,8 @@ class Home extends Component{
       .then((response) => response.json())
       .then((res) =>{
         if (res.success === true) {
-          //alert(res.user.email)
-          //AsyncStorage.setItem('usuario',JSON.stringify(res));
+          
+          AsyncStorage.setItem('usuario',JSON.stringify(res));
           alert(JSON.stringify(res))
           this.props.navigation.navigate('Dashboard');
         }
@@ -44,9 +44,9 @@ class Home extends Component{
         alert(error)
       })
     }
-    
+
   }
-      
+
   render(){
     const {heading, input,parent} = styles
     const img = require('../../assets/sk8_wall_board.png');
@@ -68,6 +68,5 @@ class Home extends Component{
     )
   }
 }
-  
+
 export default Home
-  

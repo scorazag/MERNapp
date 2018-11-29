@@ -23,24 +23,14 @@ class Usuario extends Component{
         />
           <Text style={styles.titulo}>Registro de Usuario</Text>
           <Form>
-           
               <Label style={styles.lab}>Nombre</Label>
-
-              <Input style={styles.texiput} secureTextEntry={false} placeholder="nombre" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Unombre:text})}/>
-
-           
-
-             
+              <Input style={styles.texiput} secureTextEntry={false} placeholder="nombre" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Unombre:text})}/> 
               <Label style={styles.lab} >Edad</Label>
-
               <Input style={styles.texiput} secureTextEntry={false} placeholder="Edad" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Uedad:text})} />
-
               <Label style={styles.lab} >Telefono</Label>
-              <Input style={styles.texiput} secureTextEntry={false} placeholder="Telefono" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Utel:text})} />
-              
+              <Input style={styles.texiput} secureTextEntry={false} placeholder="Telefono" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Utel:text})} />              
               <Label style={styles.lab} >Correo</Label>
-              <Input style={styles.texiput} secureTextEntry={false} keyboardType='email-address' placeholder="correo" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Tcorreo:text})} />
-           
+              <Input style={styles.texiput} secureTextEntry={false} keyboardType='email-address' placeholder="correo" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Tcorreo:text})} />           
               <Label style={styles.lab}>Selecione el # de clases</Label>
                 <Picker mode="dropdown"   style={styles.pic}
                 placeholder="# de clases" placeholderStyle={{ color: "#FFFFFF" }}  placeholderIconColor="#FFFFFF"
@@ -51,16 +41,10 @@ class Usuario extends Component{
                     <Picker.Item label="Paquete de 8 Clases" value="8" />
                 </Picker>
               <Text style={styles.titulo}>Datos del Tutor</Text>
-
               <Label style={styles.lab} >Nombre Tutor</Label>
-              <Input style={styles.texiput} secureTextEntry={false} placeholder="Nombre Tutor" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Tnombre:text})} />
-            
-        
+              <Input style={styles.texiput} secureTextEntry={false} placeholder="Nombre Tutor" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Tnombre:text})} />        
               <Label style={styles.lab}>Telefono Tutor</Label>
               <Input style={styles.texiput} secureTextEntry={false} placeholder="Telefono Tutor" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Ttel:text})}/>
-
-          
-
            <Button style={styles.bulog} block onPress={_ => this.checkLogin()}>
             <Text style={styles.resusu}> Registrar Usuario</Text>
           </Button>

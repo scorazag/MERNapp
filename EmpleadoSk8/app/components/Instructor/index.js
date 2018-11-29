@@ -12,7 +12,8 @@ class Instructor extends Component{
     this.state = {
       nombre:'',
       email:'',
-      celular:''
+      celular:'',
+      edad:''
     }
   }
 
@@ -20,8 +21,9 @@ class Instructor extends Component{
     const {nombre } = this.state
     const {celular} = this.state
     const {email} = this.state
+    const {edad} = this.state
 
-    if( nombre == '' || celular == '' || email == ''){
+    if( nombre == '' || celular == '' || email == '' || edad == ''){
       alert("faltan campos")
     }
     else{
@@ -35,7 +37,8 @@ class Instructor extends Component{
         body:JSON.stringify({
           nombre:nombre,
           celular:celular,
-          email:email
+          email:email,
+          edad:edad
         })
       })
       .then((response) => response.json())
@@ -63,20 +66,20 @@ class Instructor extends Component{
           <Form>
            
               <Label style={styles.lab}>Nombre</Label>
-              <Input style={styles.texiput} secureTextEntry={false} placeholder="nombre" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Inombre:text})}/>
+              <Input style={styles.texiput} secureTextEntry={false} placeholder="nombre" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({nombre:text})}/>
 
              <Label style={styles.lab} >Edad</Label>
-              <Input style={styles.texiput} secureTextEntry={false} placeholder="Edad" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Iedad:text})} />
+              <Input style={styles.texiput} secureTextEntry={false} placeholder="Edad" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({edad:text})} />
             
            
               <Label style={styles.lab} >Correo</Label>
-              <Input style={styles.texiput} secureTextEntry={false} placeholder="correo" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Icorreo:text})} />
+              <Input style={styles.texiput} secureTextEntry={false} placeholder="correo" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({correo:text})} />
            
               <Label style={styles.lab}>Telefono</Label>
-              <Input style={styles.texiput} secureTextEntry={false} placeholder="Telefono" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Itel:text})}/>
+              <Input style={styles.texiput} secureTextEntry={false} placeholder="Telefono" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({celular:text})}/>
            
 
-           <Button style={styles.bulog} block onPress={_ => this.checkLogin()}>
+           <Button style={styles.bulog} block onPress={_ => this.registarTutor()}>
             <Text style={styles.resusu}> Registrar Instructor</Text>
           </Button>
       

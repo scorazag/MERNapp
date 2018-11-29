@@ -7,15 +7,14 @@ export default class AgendarCita extends Component {
     super()
     this.state = {
       list:''
-    }
-    try{
-      const value = AsyncStorage.getItem('usuario');
-      alert(value);
-      
-    }catch(err){
-      console.log(err)
+    } 
+    AsyncStorage.getItem('usuario').then((value) =>{
+      if (value !== null) {
+        alert(JSON.stringify(value));
     }
 
+    });
+      
   }
   render() {
     const img_icon = require('../../assets/sk8_icon2.png');

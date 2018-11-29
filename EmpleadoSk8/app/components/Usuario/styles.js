@@ -6,15 +6,16 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+
   } ,
   overlayContainer:{
     flex :1,
     backgroundColor:'rgba(0, 0, 0, 0.4)',
-   
   },
   emlogo:{
     marginTop: 20,
     marginLeft:10,
+
     width: 150, height: 60,
    
   },
@@ -30,6 +31,7 @@ export default StyleSheet.create({
     color: '#FFFFFF',
   },
   texiput:{
+
     width :300,
     marginLeft:20,
     marginRight:20,
@@ -40,6 +42,7 @@ export default StyleSheet.create({
     fontSize:15,
     alignSelf: 'center'
   },
+
   pic:{
     width :300,
     marginLeft:20,
@@ -49,6 +52,7 @@ export default StyleSheet.create({
     color : '#FFFFFF',
     alignSelf: 'center',
   },
+
   parent:{
     flex:1,
     justifyContent:'center'

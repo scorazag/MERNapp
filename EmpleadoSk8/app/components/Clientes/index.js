@@ -46,59 +46,10 @@ class Clientes extends Component{
                             {/*Formulario para enviar el id del cliente*/}
                             <Form>
                                {/*input donde se guarda el id del cliente*/}
+
                               <TextInput editable={false} selectTextOnFocus={false} onChangeText={text => this.setState({Unombre:text})} />
                               <Button onPress={_ => this.entrarInfocliente()} >
                                 <Text style={{color:'#FFFFFF',padding: 8}}>Ver Informacion</Text>
-                                </Button>
-                            </Form>
-                             
-                          </Right>
-                        </CardItem>
-                        <CardItem>
-                        <Text>Cliente : Pantro Sael Radcela Coraza Johan</Text>
-                       </CardItem>
-        </Card>
-        <Card>
-                        <CardItem>
-                        <Left>
-                          <Icon name="person" />
-                          <Body>
-                                  <Text>Clientes</Text>
-                                  <Text note>Informacion del cliente</Text>
-                           </Body>
-                          </Left>
-                          <Right>
-                            {/*Formulario para enviar el id del cliente*/}
-                            <Form>
-                               {/*input donde se guarda el id del cliente*/}
-                              <TextInput editable={false} selectTextOnFocus={false} onChangeText={text => this.setState({Unombre:text})} />
-                              <Button onPress={_ => this.entrarInfocliente()} >
-                              <Text style={{color:'#FFFFFF',padding: 8}}>Ver Informacion</Text>
-                                </Button>
-                            </Form>
-                             
-                          </Right>
-                        </CardItem>
-                        <CardItem>
-                        <Text>Cliente : Pantro Sael Radcela Coraza Johan</Text>
-                       </CardItem>
-        </Card>
-        <Card>
-                        <CardItem>
-                        <Left>
-                          <Icon name="person" />
-                          <Body>
-                                  <Text>Clientes</Text>
-                                  <Text note>Informacion del cliente</Text>
-                           </Body>
-                          </Left>
-                          <Right>
-                            {/*Formulario para enviar el id del cliente*/}
-                            <Form>
-                               {/*input donde se guarda el id del cliente*/}
-                              <TextInput editable={false} selectTextOnFocus={false} onChangeText={text => this.setState({Unombre:text})} />
-                              <Button onPress={_ => this.entrarInfocliente()} >
-                              <Text style={{color:'#FFFFFF',padding: 8}}>Ver Información</Text>
                                 </Button>
                             </Form>
                              

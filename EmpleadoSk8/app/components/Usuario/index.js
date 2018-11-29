@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+
 import {View,Text,Image,ImageBackground,keyboardType,Picker} from 'react-native';
+
 import { Container, Header, Content, Form, Item, Input, Label,Button } from 'native-base';
 import styles from './styles.js';
 class Usuario extends Component{
@@ -23,11 +25,14 @@ class Usuario extends Component{
           <Form>
            
               <Label style={styles.lab}>Nombre</Label>
+
               <Input style={styles.texiput} secureTextEntry={false} placeholder="nombre" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Unombre:text})}/>
+
            
 
              
               <Label style={styles.lab} >Edad</Label>
+
               <Input style={styles.texiput} secureTextEntry={false} placeholder="Edad" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Uedad:text})} />
 
               <Label style={styles.lab} >Telefono</Label>
@@ -53,6 +58,7 @@ class Usuario extends Component{
         
               <Label style={styles.lab}>Telefono Tutor</Label>
               <Input style={styles.texiput} secureTextEntry={false} placeholder="Telefono Tutor" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Ttel:text})}/>
+
           
 
            <Button style={styles.bulog} block onPress={_ => this.checkLogin()}>

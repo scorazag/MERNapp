@@ -2,9 +2,56 @@ import React, {Component} from 'react';
 import {View,Text,Image,ImageBackground} from 'react-native';
 import { Container, Header, Content, Form, Item, Input, Label,Button } from 'native-base';
 import styles from './styles.js';
+
+
+
 class Instructor extends Component{
+
+  constructor(props){
+    super(props)
+    this.state = {
+      nombre:'',
+      email:'',
+      celular:''
+    }
+  }
+
+  registarTutor (){
+    const {nombre } = this.state
+    const {celular} = this.state
+    const {email} = this.state
+
+    if( nombre == '' || celular == '' || email == ''){
+      alert("faltan campos")
+    }
+    else{
+      alert("entrando al else")
+      fetch('http:// 192.168.1.73:3000/tutores/register',{
+        method:'POST',
+        headers:{
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body:JSON.stringify({
+          nombre:nombre,
+          celular:celular,
+          email:email
+        })
+      })
+      .then((response) => response.json())
+        .then((responseJson) =>{
+          alert(responseJson)
+        })
+      .catch((error) => {
+        console.error(error)
+      })
+    }
+  }
+
+
   render(){
     return(
+
       < ImageBackground   style={styles.container}
       source={require('../../image/cliente.jpg')} >
         <Content style={styles.overlayContainer}>
@@ -17,10 +64,8 @@ class Instructor extends Component{
            
               <Label style={styles.lab}>Nombre</Label>
               <Input style={styles.texiput} secureTextEntry={false} placeholder="nombre" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Inombre:text})}/>
-           
 
-            
-              <Label style={styles.lab} >Edad</Label>
+             <Label style={styles.lab} >Edad</Label>
               <Input style={styles.texiput} secureTextEntry={false} placeholder="Edad" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({Iedad:text})} />
             
            
@@ -34,10 +79,10 @@ class Instructor extends Component{
            <Button style={styles.bulog} block onPress={_ => this.checkLogin()}>
             <Text style={styles.resusu}> Registrar Instructor</Text>
           </Button>
-          </Form>
-        </Content>
-        </ ImageBackground>
-
+      
+        </Form>
+      </Content>
+      </ImageBackground>     
     )
   }
 }

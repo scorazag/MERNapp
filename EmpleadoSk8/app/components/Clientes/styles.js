@@ -5,15 +5,12 @@ export default StyleSheet.create({
   container:{
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    
-    
-    
-  } ,
+    alignItems:'center'
+   } ,
   overlayContainer:{
     flex :1,
-    backgroundColor:'rgba(0, 0, 0, 0.4)',
-    
+    backgroundColor:'rgba(0,0,0,0.4)'
+
   },
   titulo:{
     color : '#FFFFFF',
@@ -23,12 +20,12 @@ export default StyleSheet.create({
   },
   emlogo:{
     marginTop: 20,
-    marginLeft:10,
-    width: 150, height: 60,
+   marginLeft:10,
+ width: 150, height: 60,
    
   },
 sear:{
-    marginLeft:10,
+   marginLeft:10,
     color:"black"
 },
 
@@ -43,10 +40,11 @@ sear:{
     flex: 1
   },
   card:{
-    width:340,
-      backgroundColor :'rgba(229, 145, 11, 0.7)'
+      width:340,
+   backgroundColor :'rgba(229, 145, 11, 0.7)'
   },
-  texiput:{
+  
+ texiput:{
     width :280,
     marginLeft:140,
     marginRight:20,

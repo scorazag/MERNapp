@@ -1,16 +1,30 @@
 import React, {Component} from 'react';
-import {View,Image,Text,TouchableOpacity} from 'react-native';
+import {View,Image,Text,TouchableOpacity, AsyncStorage} from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Button, Icon, Left, Body, Right } from 'native-base';
 import styles from './styles.js';
 export default class AgendarCita extends Component {
+  constructor(){
+    super()
+    this.state = {
+      list:''
+    }
+    try{
+      const value = AsyncStorage.getItem('usuario');
+      alert(value);
+      
+    }catch(err){
+      console.log(err)
+    }
 
+  }
   render() {
     const img_icon = require('../../assets/sk8_icon2.png');
     const header = require('../../assets/sk8_f4.jpg');
     var Usuario = 'Uskudar';
-    
+    //const data = JSON.stringify(this.state.list);
+
     return (
-      <View style={styles.container}>
+      <View style={styles.container} on>
           <Image source={header} style={styles.header}/>
           <Image style={styles.avatar} source={img_icon}/>
           <View style={styles.body}>

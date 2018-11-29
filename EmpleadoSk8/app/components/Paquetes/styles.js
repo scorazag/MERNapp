@@ -10,6 +10,7 @@ export default StyleSheet.create({
   overlayContainer:{
     flex :1,
     backgroundColor:'rgba(0, 0, 0, 0.5)',
+
   
   },
   emlogo:{
@@ -30,8 +31,8 @@ export default StyleSheet.create({
     color: '#FFFFFF',
   },
   texiput:{
-    width :300,
-    marginLeft:20,
+   width :300,
+   marginLeft:20,
     marginRight:20,
     backgroundColor:'rgba(229, 145, 11, 0.7)',
     borderRadius: 10,
@@ -41,8 +42,8 @@ export default StyleSheet.create({
     alignSelf: 'center'
   },
   pic:{
-    width :300,
-    marginLeft:20,
+   width :300,
+   marginLeft:20,
     marginRight:20,
     backgroundColor:'rgba(229, 145, 11, 0.7)',
     paddingHorizontal: 16,

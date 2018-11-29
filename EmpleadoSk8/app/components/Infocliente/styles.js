@@ -5,8 +5,9 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    
+ 
   },
+
   titulo:{
     color : '#000000',
     textAlign: 'center',
@@ -59,6 +60,7 @@ export default StyleSheet.create({
     borderRadius:30,
     backgroundColor: "#00BFFF",
   },
+
   bulog:{
     marginTop :25,
     backgroundColor: 'red',
@@ -70,7 +72,6 @@ export default StyleSheet.create({
     alignSelf:'center',
     alignItems:'center',
     marginLeft:130
-    
   },
 
     emlogo:{

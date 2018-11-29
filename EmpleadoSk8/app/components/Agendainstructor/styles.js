@@ -6,14 +6,15 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  
-    
+
+    width: null, height: null,
     
   } ,
   overlayContainer:{
     flex :1,
     backgroundColor:'rgba(0, 0, 0, 0.4)',
-   
+
+    width : 410,
   },
   
   lab:{
@@ -22,7 +23,9 @@ export default StyleSheet.create({
     color: '#FFFFFF',
   },
   texiput:{
+
     width :300,
+    width :350,
     marginLeft:20,
     marginRight:20,
     backgroundColor:'rgba(229, 145, 11, 0.7)',
@@ -46,21 +49,21 @@ export default StyleSheet.create({
   },
   emlogo:{
     marginTop: 20,
-    marginLeft:10,
+
+    marginRight:10,
     width: 150, height: 60,
    
   },
   datePicker: {
     height: 60,
-    width: 300,
+    width: 350,
     marginTop: 20,
     paddingHorizontal: 10,
-    
 
 
 },
 picker: {
-    width: 330,
+    width: 300,
     marginTop: 20,
 },
   

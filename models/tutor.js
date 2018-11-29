@@ -23,5 +23,5 @@ module.exports.getTutorByEmail = function (email,callback) {
 module.exports.addTutor = function(newTutor, callback){
   console.log("aqui empieza a agregar los tutores");
   console.log(newTutor);
-  newUser.save(callback);
+  newTutor.save(callback);
 }

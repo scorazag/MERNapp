@@ -18,7 +18,9 @@ class Infocliente extends Component{
     var Usuario = 'Uskudar';
     return(
      <Container style={styles.container}>
+
         <Content >
+
         <Image
       style={styles.emlogo}
         source={require('../../image/logo1.png')}
@@ -137,13 +139,7 @@ class Infocliente extends Component{
                      </Body>
                      </CardItem>
       </Card>      
-      <Form>
-                            <TextInput  editable={false} selectTextOnFocus={false} onChangeText={text => this.setState({Ucorreo:text})} />
-                              <Button  style={styles.bulog} onPress={_ => this.entrarClieninfo()} >
-                                <Text style={styles.resusu}>Eliminar</Text>
-                                </Button>
-     </Form>   
-                         
+             
                            
                            
                           

@@ -74,7 +74,10 @@ router.post('/authenticate',(req,res,next) => {
            id: user._id,
            nombre: user.nombre,
            celular: user.celular,
-           email: user.email
+           email: user.email,
+           paquete:user.paquete,
+           nombreTutor:user.nombreTutor,
+           telefonoTutor:user.telefonoTutor
          }
         });
         } else {

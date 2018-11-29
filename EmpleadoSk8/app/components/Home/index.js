@@ -38,10 +38,8 @@ class Home extends Component{
           source={require('../../image/logo1.png')}
         />
         <Text style={heading}> Bienvenidos </Text>
-        <TextInput style={input} secureTextEntry={false} placeholder="Correo" placeholderTextColor="#FFFFFF"/>
-        <TextInput style={input} secureTextEntry={true} placeholder="Password" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({clave:text})}/>
-        
-          <TouchableOpacity
+        <TextInput style={input} secureTextEntry={true} placeholder="Token" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({clave:text})}/>  
+        <TouchableOpacity
          style={styles.boxs}  block
          onPress={_ => this.checkLogin()}
        >

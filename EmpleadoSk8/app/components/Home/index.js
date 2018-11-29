@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,TextInput,Alert} from 'react-native';
+import {Platform, StyleSheet, Text, View,TextInput,Alert,Image,ImageBackground,TouchableOpacity} from 'react-native';
 import { Container, Header, Content, Button, StyleProvider } from 'native-base';
-import styles from './styles'
+import styles from './styles';
 
 class Home extends Component{
 
@@ -25,17 +25,31 @@ class Home extends Component{
 
 
   render(){
+    
     const {heading, input,parent} = styles
     return(
-      <View style={{backgroundColor: '#2a0e71',flex:1,}} >
-        <View style={parent}>
-          <Text style={heading}> Bienvenidos </Text>
-          <TextInput style={input} secureTextEntry={true} placeholder="Token" onChangeText={text => this.setState({clave:text})}/>
-            <Button rounded block onPress={_ => this.checkLogin()} color='#ff6600'>
-              <Text> Entrar</Text>
-            </Button> 
-        </View>
-      </View>
+      <ImageBackground
+      style={{flex: 1,width: '100%', height: '100%'}}
+      source={require('../../image/fonloem.jpg')}
+        >
+      <View style={styles.con} >
+      <Image
+        style={styles.patilogo}
+          source={require('../../image/logo1.png')}
+        />
+        <Text style={heading}> Bienvenidos </Text>
+        <TextInput style={input} secureTextEntry={false} placeholder="Correo" placeholderTextColor="#FFFFFF"/>
+        <TextInput style={input} secureTextEntry={true} placeholder="Password" placeholderTextColor="#FFFFFF" onChangeText={text => this.setState({clave:text})}/>
+        
+          <TouchableOpacity
+         style={styles.boxs}  block
+         onPress={_ => this.checkLogin()}
+       >
+         <Text style={styles.textSe}> Iniciar Sesion </Text>
+       </TouchableOpacity>
+     </View>
+
+     </ImageBackground>
     )
   }
 }

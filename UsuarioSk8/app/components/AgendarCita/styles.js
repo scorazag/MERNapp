@@ -1,17 +1,21 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from "react-native";
 
-export default  StyleSheet.create({
-  item: {
-    backgroundColor: 'white',
+export default StyleSheet.create({
+  container: {
     flex: 1,
-    borderRadius: 5,
-    padding: 10,
-    marginRight: 10,
-    marginTop: 17
+    justifyContent: "center",
+    alignItems: "center"
   },
-  emptyDate: {
-    height: 15,
-    flex:1,
-    paddingTop: 30
+  button: {
+    backgroundColor: "lightblue",
+    padding: 12,
+    margin: 16,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+    borderColor: "rgba(0, 0, 0, 0.1)"
+  },
+  text: {
+    marginVertical: 10
   }
 });
